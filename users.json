@@ -1,0 +1,32 @@
+[
+    {
+        "Name": "blas",
+        "Email": "a@a.com",
+        "HashedPasswort": "$2y$10$c8f2\/DUZlt5KKrDJlhwEceIt.ZEH9i.\/QsF2mcyT.aJOwv4VTZWF."
+    },
+    {
+        "Name": "ACCOUNT 2",
+        "Email": "a2@a.com",
+        "HashedPasswort": "$2y$10$daHeHFGZH4s\/\/pFKoXnFrut4lLnQopXINNvsH7YIV\/DkcZyZM.GWS"
+    },
+    {
+        "Name": "ACCOUNT 3",
+        "Email": "a3@a.com",
+        "HashedPasswort": "$2y$10$4btrsDIzT1QNW8yORWeCF.qGNjazJAx\/98ktg0UlV9LTl4WTXOF\/O"
+    },
+    {
+        "Name": "yusus_",
+        "Email": "yusuftokmak3221@gmail.com",
+        "HashedPasswort": "$2y$10$65kMWWP8hCT5s74llFml6uIfAvbq.4XqkhmYPtfdVeH3ymPSrjVzS"
+    },
+    {
+        "Name": "Account 5",
+        "Email": "a5@a.com",
+        "HashedPasswort": "$2y$10$P\/1xJSrvSUX.NlD3A0twPuxGbdEuqHUQ4oZGa9w\/cFKOklWudgWua"
+    },
+    {
+        "Name": "Account 6",
+        "Email": "a6@a.com",
+        "HashedPasswort": "$2y$10$CryfIyZPxoB50RqGA2PiE.E.18CKNdS61hB6q32x3di3MXXYWc0ri"
+    }
+]

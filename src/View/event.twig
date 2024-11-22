@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ Eventname }} - Event Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fb;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            padding: 20px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .event-details {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        .event-details h2 {
+            color: #333;
+            font-size: 28px;
+            margin: 0 0 15px 0;
+        }
+        .event-details p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #5A5A5A;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #4D4D4D;
+        }
+        .login-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .login-button:hover {
+            background-color: #45a049;
+        }
+        .logout-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #FE6F5E;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .logout-button:hover {
+            background-color: #FE5643;
+        }
+        .max-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #353839;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ Eventname }}</h1>
+        <div class="event-details">
+            <h2>{{ Eventname }}</h2>
+            <p><strong>Datum:</strong> {{ Datum }}</p>
+            <p><strong>Maximale Anzahl von Personen:</strong> {{ Maxpersonen }}</p>
+            <p><strong>Angemeldeten Nutzern:</strong> ({{ Personen }})
+            {% for User in JoinedUsers %}
+                {{ User}}{% if not loop.last %},{% else %}.{% endif %}
+            {% endfor %}
+            </p>
+            <p><strong>Beschreibung:</strong> {{ Eventbeschreibung }}</p>
+            {% set break = false %}
+            {% if eventStatus is same as(1) and not break %}
+                <form action="  " method="POST">
+                    <input type="hidden" name="logout">
+                    <button type="submit" class="logout-button">Ausloggen</button>
+                </form>
+                {% set break = true %}
+            {% elseif eventStatus is same as(2) and not break %}
+                <form action={% if loggedIn == true %}   {% else %}/index.php?page=login{% endif %} method="POST">
+                    <input type="hidden" name="login">
+                    <button type="submit" class="login-button">Bin Dabei!</button>
+                </form>
+                {% set break = true %}
+            {% elseif eventStatus is same as(0) and not break %}
+                <a class="max-button">Maximale Personen erreicht</a>
+            {% endif %}
+            <a href=" /index.php " class="back-button">Zurück zum Events</a>
+            
+        </div>
+    </div>
+</body>
+</html>

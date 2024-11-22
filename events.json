@@ -1,0 +1,62 @@
+[
+    {
+        "Eventname": "EVENT 1",
+        "Datum": "2024-11-30",
+        "Eventbeschreibung": "asdasdasasad",
+        "Maxpersonen": 10,
+        "Personen": 3,
+        "JoinedUsers": {
+            "1": "yusus_",
+            "0": "blas",
+            "2": "ACCOUNT 2"
+        },
+        "id": 62921
+    },
+    {
+        "Eventname": "EVENT 1",
+        "Datum": "2024-11-30",
+        "Eventbeschreibung": "asdasdasasad",
+        "Maxpersonen": 10,
+        "Personen": 1,
+        "JoinedUsers": {
+            "1": "yusus_"
+        },
+        "id": 61400
+    },
+    {
+        "Eventname": "EVENT 3",
+        "Datum": "2024-12-13",
+        "Eventbeschreibung": "blablabla",
+        "Maxpersonen": 5,
+        "Personen": 1,
+        "JoinedUsers": [
+            "blas"
+        ],
+        "id": 12680
+    },
+    {
+        "Eventname": "NOCH EIN EVENT",
+        "Datum": "2025-01-01",
+        "Eventbeschreibung": "BESCHREIBUNG",
+        "Maxpersonen": 2,
+        "Personen": 2,
+        "JoinedUsers": [
+            "yusus_",
+            "blas"
+        ],
+        "id": 47728
+    },
+    {
+        "Eventname": "The Winter Wonderland",
+        "Datum": "2024-12-22",
+        "Eventbeschreibung": "\r\n\r\nExciting Event Coming Soon: The Winter Wonderland Festival!\r\n\r\nGet ready for a magical experience at the Winter Wonderland Festival, happening this December 15th through 17th at the Grand Park in downtown. This family-friendly event promises to bring the holiday spirit to life with a wide array of activities for all ages.\r\n\r\nThe festival kicks off each day with ice skating on the largest outdoor rink in the city, followed by a holiday market featuring local artisans, food vendors, and unique gifts. Don\u2019t miss the chance to meet Santa Claus in his enchanted winter cabin or take a ride on the carousel lit up with thousands of twinkling lights.\r\n\r\nThe highlight of the weekend will be the live holiday concert, featuring performances from local musicians and choirs. Enjoy everything from classic carols to modern holiday hits as the park transforms into a shimmering, festive haven.\r\n\r\nWhether you're coming for the ice skating, the shopping, or simply to enjoy the magical atmosphere, there's something for everyone at the Winter Wonderland Festival! Don\u2019t forget to bring your loved ones and create unforgettable memories.",
+        "Maxpersonen": 30,
+        "Personen": 3,
+        "JoinedUsers": [
+            "yusus_",
+            "blas",
+            "ACCOUNT 2"
+        ],
+        "id": 30182
+    }
+]

@@ -1,0 +1,100 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        .right-corner {
+            position: absolute;
+            right: 30;
+            top: 10;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            padding: 5px;
+        }
+        strong {
+            color: #666;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .events {
+            padding: 5px;
+        }
+        .event {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            width: 500px;
+            background-color: #fff;
+        }
+        h3 { 
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+        .login-button {
+            display: inline-block;
+            margin-top: 0px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .login-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action={% if loggedIn == true %}   {% else %}/index.php?page=login{% endif %}>  
+    Eventname: <input type="text" name="Eventname">
+    <span class="error">{{ eventnameError }}</span>
+    <br><br>
+    Datum: <input type="date" name="Datum">
+    <span class="error">{{ datumError }}</span>
+    <br><br>
+    Eventbeschreibung: <textarea name="Eventbeschreibung" rows="3" cols="30"></textarea>
+    <span class="error">{{ beschreibungError }}</span>
+    <br><br>
+    Maximale Anzahl von Personen: <input type="number" name="Maxpersonen" min=1>
+    <span class="error">{{ maxpersonenError }}</span>
+    <br><br>
+    <input type="submit" name="Absenden" value="Absenden">
+    <br>
+</form>
+<div class="right-corner"><h2>{{ userName }}</h2>
+    <form method="post" action={% if loggedIn == true %}   {% else %}/index.php?page=login{% endif %}>
+        <button type="submit" name="{{ logText }}">{{ logText }}</button>
+    </form>
+</div>
+<div class="events">
+    {% for event in events %}
+    <div class="event" onclick="klikaj({{event.id}})"> 
+        <div>
+            <h3>{{ event.Eventname }}</h3>
+            <strong>Datum: </strong>{{ event.Datum }}<br>
+            <strong>Beschreibung: </strong>{{ event.Eventbeschreibung|length < 120 ? event.Eventbeschreibung : event.Eventbeschreibung|slice(0, 120) ~ '...' }}<br>
+            <strong>Maximale Anzahl von Personen: </strong>{{ event.Maxpersonen }}<br>
+        </div> 
+        <form method="post" action={% if loggedIn == true %}   {% else %}/index.php?page=login{% endif %}>
+        {% if event.eventStatus is same as(0) %}
+            <strong>Maximale Personen erreicht!</strong>
+        {% elseif event.eventStatus is same as(1) %}
+            <strong>Beteiligte personen: </strong>{{ event.Personen }}
+        {% elseif event.eventStatus is same as(2) %}
+            <button type="submit" name="{{ loop.index - 1}}" class="login-button">Bin dabei!</button>
+        {% endif %}
+        </form>
+    </div>
+    <br>
+{% endfor %}
+<br>
+</div>
+</body>
+
+<script>
+    function klikaj(i) {
+        location.href = "/index.php?event="+i;
+    }
+</script>
